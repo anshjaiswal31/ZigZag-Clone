@@ -1,0 +1,2 @@
+# ZigZag-Clone
+JOSS 2020, GITHUB 101
