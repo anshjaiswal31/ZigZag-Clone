@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TileManager : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class TileManager : MonoBehaviour
     public GameObject[] tilesPrefab;
 
     public GameObject CurrentTile;
+
+    public GameObject canvas;
 
     Stack<GameObject> topTiles=new Stack<GameObject>();
     Stack<GameObject> leftTiles = new Stack<GameObject>();
@@ -89,5 +92,13 @@ public class TileManager : MonoBehaviour
     {
         leftTiles.Push(obj);
         leftTiles.Peek().SetActive(false);
+    }
+    public void Dead()
+    {
+        canvas.SetActive(true);
+    }
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(0);
     }
 }

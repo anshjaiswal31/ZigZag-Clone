@@ -51,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
                 //Kill the player
                 isDead = true;
                 transform.GetChild(0).transform.SetParent(null);
+                TileManager.Instance.Dead();
                 Destroy(gameObject);
             }
         }
