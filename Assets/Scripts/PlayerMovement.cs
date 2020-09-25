@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 direction;
     public GameObject ps;
     private bool isDead = false;
+
+    [SerializeField]
+    private int score = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 direction = Vector3.forward;
             }
+            score+=1;
             
         }
         float amoutToMove = speed * Time.deltaTime;
@@ -38,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
         {
             ob.gameObject.SetActive(false);
             Instantiate(ps, transform.position, Quaternion.identity);
+            score += 3;
         }
     }
     private void OnTriggerExit(Collider other)
