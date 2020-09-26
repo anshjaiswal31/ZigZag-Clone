@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,8 +10,10 @@ public class PlayerMovement : MonoBehaviour
     public GameObject ps;
     private bool isDead = false;
 
-    [SerializeField]
+    
     private int score = 0;
+
+    public Text ScoreText;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
                 direction = Vector3.forward;
             }
             score+=1;
+            ScoreText.text = "Score : "+score.ToString();
             
         }
         float amoutToMove = speed * Time.deltaTime;
@@ -43,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
             ob.gameObject.SetActive(false);
             Instantiate(ps, transform.position, Quaternion.identity);
             score += 3;
+            ScoreText.text = "Score : " + score.ToString();
         }
     }
     private void OnTriggerExit(Collider other)

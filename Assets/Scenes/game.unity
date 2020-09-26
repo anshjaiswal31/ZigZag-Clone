@@ -566,7 +566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 12
   ps: {fileID: 3598784817647623651, guid: f6cc83d9d53b5b04880ec11a79649e17, type: 3}
-  score: 0
+  ScoreText: {fileID: 2125521227}
 --- !u!135 &1239768765
 SphereCollider:
   m_ObjectHideFlags: 0
